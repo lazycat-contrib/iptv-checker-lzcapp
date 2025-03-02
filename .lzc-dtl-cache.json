@@ -1,0 +1,33 @@
+{
+  "name": "IPTV检查器",
+  "package": "cloud.lazycat.app.iptv-checker",
+  "description": "IPTV检查工具，请检查您的播放列表是否可用",
+  "homepage": "https://github.com/zhimin-dev/iptv-checker",
+  "author": "zhimin-dev",
+  "app_features": [
+    "public_path"
+  ],
+  "subdomain": "iptv-checker",
+  "version": "4.1.4",
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "public_paths": [
+    "/"
+  ],
+  "port_mappings": {
+    "iptv-checker_8081_8089": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_zmisgod_iptvchecker": {
+    "originalImage": "zmisgod/iptvchecker",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/zmisgod/iptvchecker:60598750262c8c6e",
+    "timestamp": "2025-03-02T01:26:43.136Z"
+  }
+}
