@@ -19,3 +19,4 @@ services:
     image: registry.lazycat.cloud/czyt/zmisgod/iptvchecker:60598750262c8c6e
     binds:
       - /lzcapp/var/output:/app/static/output
+      - /lzcapp/var/input:/app/static/input
