@@ -1,0 +1,14 @@
+application:
+  subdomain: iptv-checker
+  background_task: true
+  multi_instance: false
+  upstreams:
+    - location: /
+      backend: http://iptv-checker:8089/
+services:
+  iptv-checker:
+    # upstream: zmisgod/iptvchecker:v5.0.1
+    image: docker.1ms.run/zmisgod/iptvchecker:v5.0.1
+    binds:
+      - /lzcapp/var/output:/app/static/output
+      - /lzcapp/var/input:/app/static/input

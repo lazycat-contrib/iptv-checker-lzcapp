@@ -1,0 +1,38 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/iptv-checker.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: iptv-checker
+build:
+  run_buildscript: false
+images:
+  # 上游有完整三段 SemVer tag（v3.2.1/v4.7.1/v5.0.x），排除 latest
+  - id: iptv-checker
+    target: service
+    service: iptv-checker
+    source: zmisgod/iptvchecker
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+
+stores:
+  official:
+    # Official store publication is intentionally disabled; publish only to Miaomiao Store.
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: IPTV检查器
+    summary: "IPTV检查工具，请检查您的播放列表是否可用"
