@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.iptv-checker
-version: 5.0.1
+version: 5.0.2
 name: IPTV检查器
 description: "IPTV检查工具，请检查您的播放列表是否可用"
 min_os_version: "1.5.0"
