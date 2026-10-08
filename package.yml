@@ -1,4 +1,5 @@
 package: cloud.lazycat.app.iptv-checker
+license: MIT
 version: 5.0.2
 name: IPTV检查器
 description: "IPTV检查工具，请检查您的播放列表是否可用"
